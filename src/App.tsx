@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { getData } from "./services";
 import { Application } from "./types";
 import { DataFiltering } from "./features/DataFiltering";
@@ -37,7 +36,7 @@ function App() {
   if (applications) {
     return (
       <div>
-        <h1>React Coding Exercise</h1>
+        <h1 className="text-xl text-red-600">React Coding Exercise</h1>
         <DataFiltering groupedApplications={groupApplications(applications)} />
       </div>
     );

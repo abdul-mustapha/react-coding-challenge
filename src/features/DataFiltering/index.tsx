@@ -16,8 +16,6 @@ export const DataFiltering = ({ groupedApplications }: DataFiltering) => {
     setSelectedApplications(applications);
   };
 
-  console.log(groupedApplications);
-
   return (
     <div>
       <Navigation
