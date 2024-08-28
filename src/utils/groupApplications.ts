@@ -1,4 +1,5 @@
 import { Application, GroupedApplications } from "../types";
+import { sortCapabilities } from "./sortCapabilities";
 
 export const groupApplications = (
   applications: Application[]
@@ -37,6 +38,8 @@ export const groupApplications = (
       bcap3.applications.push(app);
     }
   });
+
+  sortCapabilities(grouped);
 
   return grouped;
 };

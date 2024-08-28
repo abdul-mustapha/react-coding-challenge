@@ -36,3 +36,5 @@ Personal Development Thoughts
 - So far, I would say the data structure isn't perfect for this sort of application, but I guess that is part of the task to make sure I understand recursion.
 - I would personally make the API return the nested structure in one endpoint, and have another endpoint responsible for the filtering where I can pass in a capability name and the spend.
 - I installed tailwind instead of using typical CSS as i find it quicker and much more intutitive when needing to style something very quickly
+- I could sort spend the application cards by spend amounts as a future improvement
+- I could also have all applications display by default before filtering and sorted, however, i would have to create some horrible flatten map to get that to work for the structure i have gone with :()
