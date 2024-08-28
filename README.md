@@ -38,3 +38,4 @@ Personal Development Thoughts
 - I installed tailwind instead of using typical CSS as i find it quicker and much more intutitive when needing to style something very quickly
 - I could sort spend the application cards by spend amounts as a future improvement
 - I could also have all applications display by default before filtering and sorted, however, i would have to create some horrible flatten map to get that to work for the structure i have gone with :()
+- Nevermind, i just passed in the initial state, its late xD
