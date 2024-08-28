@@ -1,22 +1,16 @@
-export interface BusinessCapability {
+export interface Application {
+  id: string;
+  name: string;
+  spend: number;
   BCAP1: string;
   BCAP2: string;
   BCAP3: string;
 }
 
-export interface Application extends BusinessCapability {
-  id: string;
+export interface CapabilityLevel {
   name: string;
-  spend: number;
+  children: CapabilityLevel[];
+  applications: Application[];
 }
 
-export type NestedApplication = {
-  id: string;
-  name: string;
-  spend: number;
-};
-
-export type FolderStructure = {
-  name: string;
-  children: (FolderStructure | NestedApplication)[];
-};
+export type GroupedApplications = CapabilityLevel[];

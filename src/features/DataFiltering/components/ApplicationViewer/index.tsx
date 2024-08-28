@@ -1,11 +1,21 @@
-import { NestedApplication } from "../../../../types";
+import { Application } from "../../../../types";
 
-type ApplicationViewer = {
-  applications: NestedApplication[];
+type ApplicationViewerProps = {
+  applications: Application[];
 };
 
-const ApplicationViewer = ({ applications }: ApplicationViewer) => {
-  return <div>{applications.map((app) => app.name)}</div>;
+const ApplicationViewer = ({ applications }: ApplicationViewerProps) => {
+  return (
+    <div>
+      <ul>
+        {applications.map((app) => (
+          <li key={app.id}>
+            {app.name} {app.spend}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default ApplicationViewer;

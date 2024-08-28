@@ -1,25 +1,30 @@
 import { useState } from "react";
-import { FolderStructure } from "../../types";
+import { Application, GroupedApplications } from "../../types";
 import Navigation from "./components/Navigation";
 import ApplicationViewer from "./components/ApplicationViewer";
 
 type DataFiltering = {
-  groupedApplications: FolderStructure[];
+  groupedApplications: GroupedApplications;
 };
 
 export const DataFiltering = ({ groupedApplications }: DataFiltering) => {
-  const [filteredApplications, setFilteredApplications] =
-    useState<FolderStructure[]>(groupedApplications);
-  const [selectedCapabilities, setSelectedCapabilities] = useState<string[]>(
-    []
-  );
+  const [selectedApplications, setSelectedApplications] = useState<
+    Application[]
+  >([]);
+
+  const handleSelectApplications = (applications: Application[]) => {
+    setSelectedApplications(applications);
+  };
+
+  console.log(groupedApplications);
 
   return (
     <div>
-      <Navigation items={groupedApplications} />
-      <ApplicationViewer
-        applications={filteredApplications.map((app) => app.children)}
+      <Navigation
+        items={groupedApplications}
+        onSelect={handleSelectApplications}
       />
+      <ApplicationViewer applications={selectedApplications} />
     </div>
   );
 };

@@ -1,21 +1,18 @@
-import { FolderStructure } from "../../../../types";
+import { Application, CapabilityLevel } from "../../../../types";
 
 type NavigationProps = {
-  items: FolderStructure[];
+  items: CapabilityLevel[];
+  onSelect: (applications: Application[]) => void;
 };
 
-const Navigation = ({ items }: NavigationProps) => {
+const Navigation = ({ items, onSelect }: NavigationProps) => {
   return (
     <ul>
       {items.map((item, index) => (
         <li key={index}>
-          <p>{item.name}</p>
+          <p onClick={() => onSelect(item.applications)}>{item.name}</p>
           {item.children && (
-            <Navigation
-              items={item.children.filter(
-                (child): child is FolderStructure => "children" in child
-              )}
-            />
+            <Navigation items={item.children} onSelect={onSelect} />
           )}
         </li>
       ))}
