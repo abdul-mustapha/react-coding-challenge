@@ -9,3 +9,14 @@ export interface Application extends BusinessCapability {
   name: string;
   spend: number;
 }
+
+export type NestedApplication = {
+  id: string;
+  name: string;
+  spend: number;
+};
+
+export type FolderStructure = {
+  name: string;
+  children: (FolderStructure | NestedApplication)[];
+};

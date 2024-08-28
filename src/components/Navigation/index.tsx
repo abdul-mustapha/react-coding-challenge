@@ -1,10 +1,25 @@
-import NavigationItem from "./NavigationItem";
+import { FolderStructure } from "../../types";
 
-const Navigation = () => {
+type NavigationProps = {
+  items: FolderStructure[];
+};
+
+const Navigation = ({ items }: NavigationProps) => {
   return (
-    <NavigationItem
-      items={[{ name: "Hello" }, { name: "World", items: [{ name: "hey" }] }]}
-    />
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>
+          <p>{item.name}</p>
+          {item.children && (
+            <Navigation
+              items={item.children.filter(
+                (child): child is FolderStructure => "children" in child
+              )}
+            />
+          )}
+        </li>
+      ))}
+    </ul>
   );
 };
 

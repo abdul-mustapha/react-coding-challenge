@@ -31,3 +31,7 @@ Additional notes
 - We will be looking at code/file structure, code quality & best practices & design.
 - Add comments where necessary or to document any assumptions/considerations you may have.
 - You shouldn't need to use any external libraries
+
+Personal Development Thoughts
+- So far, I would say the data structure isn't perfect for this sort of application, but I guess that is part of the task to make sure I understand recursion.
+- I would personally make the API return the nested structure in one endpoint, and have another endpoint responsible for the filtering where I can pass in a capability name and the spend.

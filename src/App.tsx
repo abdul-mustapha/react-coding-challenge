@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import Navigation from "./components/Navigation";
 import { getData } from "./services";
 import { Application } from "./types";
+import { DataFiltering } from "./features/DataFiltering";
+import { groupApplications } from "./utils/groupApplications";
 
 function App() {
   const [applications, setApplications] = useState<Application[] | undefined>(
@@ -37,8 +38,7 @@ function App() {
     return (
       <div>
         <h1>React Coding Exercise</h1>
-        {JSON.stringify(applications)}
-        <Navigation />
+        <DataFiltering groupedApplications={groupApplications(applications)} />
       </div>
     );
   }
