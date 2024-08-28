@@ -4,9 +4,9 @@ This exercise is to help us better understand your experience in react and types
 
 ## Setup
 
-To get started, install the dependencies with `yarn install`.
+To get started, install the dependencies with `npm install`.
 
-Run the application with `yarn start`.
+Run the application with `npm start`.
 
 Launch application in browser at [http://localhost:5173](http://localhost:5173).
 
