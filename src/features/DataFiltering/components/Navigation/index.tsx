@@ -1,4 +1,4 @@
-import { FolderStructure } from "../../types";
+import { FolderStructure } from "../../../../types";
 
 type NavigationProps = {
   items: FolderStructure[];
