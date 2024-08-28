@@ -17,12 +17,14 @@ export const DataFiltering = ({ groupedApplications }: DataFiltering) => {
   };
 
   return (
-    <div>
+    <div className="flex space-x-8 ">
       <Navigation
         items={groupedApplications}
         onSelect={handleSelectApplications}
       />
-      <ApplicationViewer applications={selectedApplications} />
+      <div className="flex-shrink-0">
+        <ApplicationViewer applications={selectedApplications} />
+      </div>
     </div>
   );
 };

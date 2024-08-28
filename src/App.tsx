@@ -35,8 +35,8 @@ function App() {
 
   if (applications) {
     return (
-      <div>
-        <h1 className="text-xl text-red-600">React Coding Exercise</h1>
+      <div className="p-12 flex flex-col space-y-8">
+        <h1 className="text-3xl font-extrabold">React Coding Exercise</h1>
         <DataFiltering groupedApplications={groupApplications(applications)} />
       </div>
     );
