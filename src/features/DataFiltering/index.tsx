@@ -5,13 +5,16 @@ import ApplicationViewer from "./components/ApplicationViewer";
 import SpendFilter from "./components/SliderFilter";
 
 type DataFiltering = {
+  initialApplications: Application[];
   groupedApplications: GroupedApplications;
 };
 
-export const DataFiltering = ({ groupedApplications }: DataFiltering) => {
-  const [selectedApplications, setSelectedApplications] = useState<
-    Application[]
-  >([]);
+export const DataFiltering = ({
+  initialApplications,
+  groupedApplications,
+}: DataFiltering) => {
+  const [selectedApplications, setSelectedApplications] =
+    useState<Application[]>(initialApplications);
   const [filteredApplications, setFilteredApplications] = useState<
     Application[]
   >([]);
@@ -49,9 +52,7 @@ export const DataFiltering = ({ groupedApplications }: DataFiltering) => {
       <div className="flex-shrink-0">
         <div>
           <h2 className="text-lg font-bold mb-4">Applications</h2>
-          {selectedApplications.length === 0 ? (
-            <p>Select a capability</p>
-          ) : null}
+          {filteredApplications.length === 0 ? <p>No results found.</p> : null}
           <ApplicationViewer applications={filteredApplications} />
         </div>
       </div>

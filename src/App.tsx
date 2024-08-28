@@ -37,7 +37,10 @@ function App() {
     return (
       <div className="p-12 flex flex-col space-y-8">
         <h1 className="text-3xl font-extrabold">React Coding Exercise</h1>
-        <DataFiltering groupedApplications={groupApplications(applications)} />
+        <DataFiltering
+          groupedApplications={groupApplications(applications)}
+          initialApplications={applications}
+        />
       </div>
     );
   }
